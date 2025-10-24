@@ -4,7 +4,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id: 1,
         name: "Teclado Mecánico RGB Pro",
         description: "Teclado mecánico con switches azules y iluminación RGB personalizable",
-        price: 129.99,
+        price: 00,
         category: "perifericos",
         image: ""
     },
@@ -12,7 +12,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id: 2,
         name: "Mouse Gaming Elite",
         description: "Mouse ergonómico con sensor de 16000 DPI y 8 botones programables",
-        price: 79.99,
+        price: 00,
         category: "perifericos",
         image: ""
     },
@@ -20,7 +20,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id: 3,
         name: "Auriculares 7.1 Surround",
         description: "Auriculares con sonido surround 7.1 y micrófono retráctil con cancelación de ruido",
-        price: 149.99,
+        price: 00,
         category: "audio",
         image: "0"
     },
@@ -28,7 +28,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id: 4,
         name: "Monitor Curvo 144Hz",
         description: "Monitor gaming curvo de 27 pulgadas con tasa de refresco de 144Hz",
-        price: 299.99,
+        price: 00,
         category: "monitores",
         image: ""
     },
@@ -36,7 +36,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id: 5,
         name: "Silla Gaming Ergonómica",
         description: "Silla gaming con soporte lumbar, reposacabezas y ajuste de altura",
-        price: 249.99,
+        price: 00,
         category: "sillas",
         image: ""
     },
@@ -44,15 +44,15 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id: 6,
         name: "RTX 4070 Gaming OC",
         description: "Tarjeta gráfica NVIDIA RTX 4070 con 12GB GDDR6 para gaming en 4K",
-        price: 599.99,
+        price: 00,
         category: "componentes",
         image: ""
     },
     {
         id: 7,
-        name: "Alfombrilla RGB XL",
-        description: "Alfombrilla gaming extra grande con iluminación RGB en los bordes",
-        price: 39.99,
+        name: "Mousepad RGB XL",
+        description: "Mousepad gaming extra grande con iluminación RGB en los bordes",
+        price: 00,
         category: "accesorios",
         image: ""
     },
@@ -60,7 +60,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id: 8,
         name: "Stream Deck Mini",
         description: "Controlador personalizable para streamers con 6 teclas LCD",
-        price: 89.99,
+        price: 00,
         category: "accesorios",
         image: ""
     }
@@ -606,3 +606,4 @@ function syncProducts() {
 // Sincronizar productos cada 2 segundos (para demo)
 
 setInterval(syncProducts, 2000);
+
