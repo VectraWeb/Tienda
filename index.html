@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Club | Tu tienda gamer premium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1 class="logo-text">Gaming Club</h1>
+                <span class="logo-subtitle">Pro</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active" data-section="hero">Inicio</a></li>
+                    <li><a href="#" class="nav-link" data-section="categories">Categorías</a></li>
+                    <li><a href="#" class="nav-link" data-section="products">Productos</a></li>
+                    <li><a href="#" class="nav-link" data-section="contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar productos..." class="search-input">
+                    <button id="search-btn" class="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="cart-icon" id="cart-icon">
+                    <span id="cart-count">0</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.1 15.9 4.5 17 5.4 17H17M17 17C16.5 17 16 17.5 16 18C16 18.5 16.5 19 17 19C17.5 19 18 18.5 18 18C18 17.5 17.5 17 17 17ZM9 18C9 18.5 8.5 19 8 19C7.5 19 7 18.5 7 18C7 17.5 7.5 17 8 17C8.5 17 9 17.5 9 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="hero-particles" id="hero-particles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title animate-fade-up">
+                    <span class="hero-title-line">Eleva tu</span>
+                    <span class="hero-title-line highlight">experiencia gaming</span>
+                </h2>
+                <p class="hero-subtitle animate-fade-up" data-delay="200">
+                    Equipamiento profesional para gamers que buscan la victoria
+                </p>
+                <div class="hero-actions animate-fade-up" data-delay="400">
+                    <button class="btn btn-primary" data-section="products">Ver Catálogo</button>
+                    <button class="btn btn-secondary">Ofertas Especiales</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-product" data-delay="600">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Setup Gamer Profesional">
+                </div>
+                <div class="floating-product" data-delay="800">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1442&q=80" alt="Teclado Mecánico RGB">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <section class="categories section-padding" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-fade-up">Categorías Gaming</h2>
+                <p class="section-subtitle animate-fade-up" data-delay="100">Todo lo que necesitas para dominar el juego</p>
+            </div>
+            <div class="category-grid" id="category-list">
+                <!-- Las categorías se cargan dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="products section-padding" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-fade-up">Productos Destacados</h2>
+                <p class="section-subtitle animate-fade-up" data-delay="100">Los favoritos de la comunidad gamer</p>
+            </div>
+            <div class="product-filters">
+                <div class="filter-group">
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">Todas las categorías</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <div class="search-box">
+                        <input type="text" id="product-search" placeholder="Buscar productos..." class="search-input">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <select id="sort-filter" class="filter-select">
+                        <option value="name">Ordenar por</option>
+                        <option value="price-asc">Precio: Menor a Mayor</option>
+                        <option value="price-desc">Precio: Mayor a Menor</option>
+                        <option value="name">Nombre A-Z</option>
+                    </select>
+                </div>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <!-- Los productos se cargan dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrito de compras (modal) -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content cart-modal-content">
+            <div class="modal-header">
+                <h2>Tu Carrito Gaming</h2>
+                <button class="modal-close" id="cart-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cart-items">
+                    <!-- Los productos del carrito se cargan dinámicamente -->
+                </div>
+                <div class="cart-empty" id="cart-empty">
+                    <div class="empty-state">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.1 15.9 4.5 17 5.4 17H17M17 17C16.5 17 16 17.5 16 18C16 18.5 16.5 19 17 19C17.5 19 18 18.5 18 18C18 17.5 17.5 17 17 17ZM9 18C9 18.5 8.5 19 8 19C7.5 19 7 18.5 7 18C7 17.5 7.5 17 8 17C8.5 17 9 17.5 9 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3>Tu carrito está vacío</h3>
+                        <p>Agrega algunos productos épicos</p>
+                        <button class="btn btn-primary" id="continue-shopping">Continuar Comprando</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span class="total-amount">$<span id="cart-total">0.00</span></span>
+                    </div>
+                    <button class="btn btn-primary btn-large" id="checkout-btn">Proceder al Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pasarela de pagos (modal) -->
+    <div class="modal" id="payment-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content payment-modal-content">
+            <div class="modal-header">
+                <h2>Finalizar Compra</h2>
+                <button class="modal-close" id="payment-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span>Información</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span>Pago</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <span>Confirmación</span>
+                    </div>
+                </div>
+
+                <form id="payment-form" class="payment-form">
+                    <!-- Paso 1: Información de envío -->
+                    <div class="form-step active" data-step="1">
+                        <h3>Información de Envío</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="shipping-name">Nombre completo</label>
+                                <input type="text" id="shipping-name" required class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="shipping-email">Email</label>
+                                <input type="email" id="shipping-email" required class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="shipping-phone">Teléfono</label>
+                                <input type="tel" id="shipping-phone" required class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="shipping-address">Dirección</label>
+                                <input type="text" id="shipping-address" required class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="shipping-city">Ciudad</label>
+                                <input type="text" id="shipping-city" required class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="shipping-zip">Código Postal</label>
+                                <input type="text" id="shipping-zip" required class="form-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 2: Información de pago -->
+                    <div class="form-step" data-step="2">
+                        <h3>Información de Pago</h3>
+                        <div class="payment-methods">
+                            <div class="payment-method active" data-method="card">
+                                <div class="method-header">
+                                    <input type="radio" name="payment-method" id="method-card" checked>
+                                    <label for="method-card">Tarjeta de Crédito/Débito</label>
+                                </div>
+                                <div class="method-content">
+                                    <div class="form-group">
+                                        <label for="card-name">Nombre en la tarjeta</label>
+                                        <input type="text" id="card-name" required class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-number">Número de tarjeta</label>
+                                        <div class="card-input-container">
+                                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required class="form-input">
+                                            <div class="card-icons">
+                                                <span class="card-icon visa">💳</span>
+                                                <span class="card-icon mastercard">💳</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="card-expiry">Fecha de expiración</label>
+                                            <input type="text" id="card-expiry" placeholder="MM/AA" required class="form-input">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-cvc">CVC</label>
+                                            <input type="text" id="card-cvc" placeholder="123" required class="form-input">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 3: Resumen y confirmación -->
+                    <div class="form-step" data-step="3">
+                        <h3>Resumen del Pedido</h3>
+                        <div class="order-summary">
+                            <div class="order-items" id="order-items">
+                                <!-- Los productos del pedido se cargan dinámicamente -->
+                            </div>
+                            <div class="order-totals">
+                                <div class="total-row">
+                                    <span>Subtotal:</span>
+                                    <span>$<span id="order-subtotal">0.00</span></span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Envío:</span>
+                                    <span>$<span id="order-shipping">5.99</span></span>
+                                </div>
+                                <div class="total-row grand-total">
+                                    <span>Total:</span>
+                                    <span>$<span id="order-total">0.00</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="security-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Pago 100% seguro y encriptado</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="payment-actions">
+                    <button class="btn btn-secondary" id="prev-step" style="display: none;">Anterior</button>
+                    <button class="btn btn-primary" id="next-step">Siguiente</button>
+                    <button type="submit" form="payment-form" class="btn btn-success" id="submit-payment" style="display: none;">Confirmar Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <h3 class="logo-text">Gaming Club</h3>
+                        <span class="logo-subtitle">Pro</span>
+                    </div>
+                    <p>Tu destino para equipamiento gaming de alta calidad y rendimiento.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">🎮</a>
+                        <a href="#" class="social-link">📺</a>
+                        <a href="#" class="social-link">👾</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#" data-section="products">Productos</a></li>
+                        <li><a href="#" data-section="categories">Categorías</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Soporte Gaming</h4>
+                    <ul>
+                        <li><a href="#">Guías de Configuración</a></li>
+                        <li><a href="#">Soporte Técnico</a></li>
+                        <li><a href="#">Garantías</a></li>
+                        <li><a href="#">FAQ Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <p>📧 support@gamingclub.com</p>
+                        <p>📞 +15 (3462) 123456</p>
+                        <p>📍 123 Calle, Ciudad</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gaming Club Pro. Todos los derechos reservados.</p>
+                <p><a href="login.html" class="admin-link">Panel de Administración</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+</html>

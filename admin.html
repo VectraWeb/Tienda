@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Gaming Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- Preloader de seguridad -->
+    <div class="preloader" id="admin-preloader">
+        <div class="preloader-spinner">
+            <div class="spinner"></div>
+            <p>Verificando permisos de administración...</p>
+        </div>
+    </div>
+
+    <!-- Contenido principal (solo visible si está autenticado) -->
+    <div id="admin-content" style="display: none;">
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <h1 class="logo-text">Gaming Club</h1>
+                    <span class="logo-subtitle">Admin</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Volver a la Tienda</a></li>
+                        <li><a href="#" id="logout-btn">Cerrar Sesión</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <span id="admin-welcome">Bienvenido, <span id="admin-username">Admin</span></span>
+                </div>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Panel de Administración</h2>
+                    <p class="section-subtitle">Gestiona los productos de tu tienda gaming</p>
+                </div>
+                
+                <!-- Estadísticas rápidas -->
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🎮</div>
+                        <div class="stat-info">
+                            <h3 id="total-products">0</h3>
+                            <p>Productos Totales</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📁</div>
+                        <div class="stat-info">
+                            <h3 id="total-categories">0</h3>
+                            <p>Categorías</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-info">
+                            <h3 id="total-value">$0</h3>
+                            <p>Valor Inventario</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario para agregar/editar productos -->
+                <div class="admin-section">
+                    <h3 id="form-title">Agregar Nuevo Producto</h3>
+                    <form id="product-form">
+                        <input type="hidden" id="product-id">
+                        
+                        <div class="form-group">
+                            <label for="product-name">Nombre del Producto *</label>
+                            <input type="text" id="product-name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-price">Precio *</label>
+                            <div class="input-group">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="product-price" step="0.01" min="0" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-category">Categoría *</label>
+                            <select id="product-category" class="form-input" required>
+                                <option value="">Selecciona una categoría</option>
+                                <option value="perifericos">Periféricos</option>
+                                <option value="componentes">Componentes PC</option>
+                                <option value="sillas">Sillas Gaming</option>
+                                <option value="audio">Audio</option>
+                                <option value="monitores">Monitores</option>
+                                <option value="accesorios">Accesorios</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-description">Descripción *</label>
+                            <textarea id="product-description" class="form-input" rows="4" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-image">Imagen del Producto</label>
+                            <input type="file" id="product-image" accept="image/*" class="form-input">
+                            <small class="help-text">Formatos: JPG, PNG, GIF. Máx: 2MB</small>
+                            <div id="image-preview" class="image-preview"></div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="save-product">
+                                <span class="btn-text">Guardar Producto</span>
+                                <div class="btn-spinner" style="display: none;">
+                                    <div class="spinner-small"></div>
+                                </div>
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="cancel-edit" style="display: none;">
+                                Cancelar Edición
+                            </button>
+                            <button type="button" class="btn btn-outline" id="clear-form">
+                                Limpiar Formulario
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Lista de productos existentes -->
+                <div class="admin-section">
+                    <div class="section-header">
+                        <h3>Gestión de Productos</h3>
+                        <p>Administra tu inventario gaming</p>
+                    </div>
+                    
+                    <div class="products-controls">
+                        <div class="search-box">
+                            <input type="text" id="admin-search" placeholder="Buscar productos..." class="search-input">
+                        </div>
+                        <select id="admin-category-filter" class="filter-select">
+                            <option value="all">Todas las categorías</option>
+                        </select>
+                        <button class="btn btn-outline" id="refresh-products">
+                            🔄 Actualizar
+                        </button>
+                    </div>
+                    
+                    <div class="admin-products" id="admin-products">
+                        <!-- Los productos se cargan dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Notificaciones -->
+        <div id="admin-notifications"></div>
+    </div>
+
+    <!-- Mensaje de no autorizado -->
+    <div id="unauthorized-message" style="display: none;">
+        <div class="unauthorized-container">
+            <div class="unauthorized-content">
+                <h2>Acceso No Autorizado</h2>
+                <p>No tienes permisos para acceder al panel de administración.</p>
+                <div class="unauthorized-actions">
+                    <a href="login.html" class="btn btn-primary">Iniciar Sesión</a>
+                    <a href="index.html" class="btn btn-secondary">Volver a la Tienda</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

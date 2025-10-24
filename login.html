@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Administración - Gaming Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-background">
+            <div class="auth-particles" id="auth-particles"></div>
+        </div>
+        
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <h2>Gaming Club</h2>
+                    <span>Admin</span>
+                </div>
+                <h1>Acceso Seguro</h1>
+                <p>Ingresa tus credenciales para acceder al panel de administración</p>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <div class="input-group">
+                        <input type="text" id="username" name="username" required class="form-input" autocomplete="username">
+                        <span class="input-icon">👤</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <div class="input-group">
+                        <input type="password" id="password" name="password" required class="form-input" autocomplete="current-password">
+                        <span class="input-icon">🔒</span>
+                        <button type="button" class="password-toggle" id="password-toggle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember-me" name="remember-me">
+                        <span class="checkmark"></span>
+                        Recordar sesión
+                    </label>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large btn-block" id="login-btn">
+                    <span class="btn-text">Iniciar Sesión</span>
+                    <div class="btn-spinner" style="display: none;">
+                        <div class="spinner-small"></div>
+                    </div>
+                </button>
+
+                <div class="auth-security">
+                    <div class="security-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Conexión segura encriptada</span>
+                    </div>
+                </div>
+            </form>
+
+            <div class="auth-footer">
+                <a href="index.html" class="back-to-store">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Volver a la tienda
+                </a>
+            </div>
+        </div>
+
+        <!-- Alertas -->
+        <div class="alert-container" id="alert-container"></div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
