@@ -6,7 +6,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: "Teclado mecánico con switches azules y iluminación RGB personalizable",
         price: 129.99,
         category: "perifericos",
-        image: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        image: ""
     },
     {
         id: 2,
@@ -14,7 +14,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: "Mouse ergonómico con sensor de 16000 DPI y 8 botones programables",
         price: 79.99,
         category: "perifericos",
-        image: "https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80"
+        image: ""
     },
     {
         id: 3,
@@ -22,7 +22,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: "Auriculares con sonido surround 7.1 y micrófono retráctil con cancelación de ruido",
         price: 149.99,
         category: "audio",
-        image: "https://images.unsplash.com/photo-1585290771129-4b8e0fb797d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        image: "0"
     },
     {
         id: 4,
@@ -30,7 +30,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: "Monitor gaming curvo de 27 pulgadas con tasa de refresco de 144Hz",
         price: 299.99,
         category: "monitores",
-        image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1442&q=80"
+        image: ""
     },
     {
         id: 5,
@@ -38,7 +38,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: "Silla gaming con soporte lumbar, reposacabezas y ajuste de altura",
         price: 249.99,
         category: "sillas",
-        image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        image: ""
     },
     {
         id: 6,
@@ -46,7 +46,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: "Tarjeta gráfica NVIDIA RTX 4070 con 12GB GDDR6 para gaming en 4K",
         price: 599.99,
         category: "componentes",
-        image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        image: ""
     },
     {
         id: 7,
@@ -54,7 +54,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: "Alfombrilla gaming extra grande con iluminación RGB en los bordes",
         price: 39.99,
         category: "accesorios",
-        image: "https://images.unsplash.com/photo-1591030434469-3d78c7b12820?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        image: ""
     },
     {
         id: 8,
@@ -62,7 +62,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: "Controlador personalizable para streamers con 6 teclas LCD",
         price: 89.99,
         category: "accesorios",
-        image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        image: ""
     }
 ];
 
@@ -604,4 +604,5 @@ function syncProducts() {
 }
 
 // Sincronizar productos cada 2 segundos (para demo)
+
 setInterval(syncProducts, 2000);
